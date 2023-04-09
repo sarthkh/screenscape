@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenScape Profile</title>
+    <link rel="icon" href="/public/css/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/public/css/style3.css">
+</head>
+
+<body>
+    <div id="preloader"></div>
+    {{> navbar}}
+    <div class="container">
+        <h2>Your Profile</h2>
+        <img src="icons/user.png" class="profile" alt="profile icon">
+        <h3>Name: {{user.user_name}}</h3>
+        <h3>Email: {{user.user_email}}</h3>
+    </div>
+    <script>
+        window.addEventListener("load", () => {
+            let loader = document.getElementById("preloader");
+            loader.style.display = "none";
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<nav>
+    <div class="menu">
+        {{#if user}}
+        <a href="/main.html">Enter</a>
+        <a href="/profile">Profile</a>
+        <a href="/auth/logout">Logout</a>
+        {{else}}
+        <a href="/register">Register</a>
+        <a href="/">Login</a>
+        {{/if}}
+    </div>
+</nav>

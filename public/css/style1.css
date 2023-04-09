@@ -1,0 +1,353 @@
+@font-face {
+    font-family: font;
+    src: url(/public/css/font.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "font";
+    cursor: url(/public/css/cursor.png), auto;
+    user-select: none;
+}
+
+body {
+    background: black;
+    overflow: hidden;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.select-menu {
+    position: fixed;
+    top: 1.5vw;
+    left: 1.5vw;
+    width: 10vw;
+}
+
+.select-menu .select-button {
+    position: relative;
+    color: white;
+    background: transparent;
+    backdrop-filter: blur(35px);
+    font-size: 1.25vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75vw;
+    border-radius: 1vw;
+    box-shadow: 0 0 5px white;
+}
+
+.select-button .icon-arrow {
+    font-size: 1.25vw;
+    transition: 0.25s;
+}
+
+.select-button.active .icon-arrow {
+    transform: rotate(180deg);
+}
+
+.select-menu .list {
+    position: absolute;
+    width: 8.5vw;
+    margin-top: 1vw;
+}
+
+.list .option {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 2.85vw;
+    background: transparent;
+    backdrop-filter: blur(35px);
+    color: white;
+    padding: 0 0.75vw;
+    transform: scale(0) translateY(-1.75vw);
+    margin-bottom: -1.75vw;
+    transition: transform 0.125s ease-in-out, opacity 0.125s ease-in-out, margin-bottom 0.125s ease-in-out;
+    transition-delay: calc(0.05s * var(--i));
+    opacity: 0;
+}
+
+.select-button.active~.list .option {
+    transition: transform 0.125s ease-in-out, opacity 0.125s ease-in-out, margin-bottom 0.125s ease-in-out;
+    transition-delay: calc(0.05s * var(--i));
+    transform: scale(1) translateY(0);
+    margin-bottom: 0;
+    opacity: 1;
+}
+
+.list .option:hover {
+    background: white;
+    color: black;
+}
+
+.hover-up {
+    border-top-left-radius: 0.85vw;
+    border-top-right-radius: 0.85vw;
+}
+
+.hover-down {
+    border-bottom-left-radius: 0.85vw;
+    border-bottom-right-radius: 0.85vw;
+}
+
+.option .icon {
+    font-size: 1.25vw;
+    margin-right: 0.75vw;
+}
+
+.option .option-text {
+    font-size: 1.25vw;
+}
+
+.a1 {
+    text-decoration: none;
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+.blob {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 25vw;
+    border-radius: 50%;
+    translate: -50% -50%;
+    aspect-ratio: 1;
+    background: linear-gradient(to right, #8360c3, #2ebf91);
+    animation: rotate 25s infinite;
+    filter: blur(10vw);
+}
+
+.error {
+    position: absolute;
+    left: 8.5%;
+    font-size: 15px;
+    color: red;
+}
+
+.good {
+    position: absolute;
+    left: 8.5%;
+    font-size: 15px;
+    color: green;
+}
+
+.form-box {
+    position: relative;
+    width: 32.5vw;
+    height: 42.75vw;
+    background: transparent;
+    border-radius: 1.95vw;
+    backdrop-filter: blur(35px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px white;
+}
+
+.input-box {
+    position: relative;
+    margin: 2.73vw 0;
+    width: 24.5vw;
+    border-bottom: 0.14vw solid white;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0.2vw;
+    color: white;
+    transform: translateY(-50%);
+    font-size: 1.27vw;
+    pointer-events: none;
+    transition: 0.25s;
+}
+
+input:focus~label,
+input:valid~label,
+input:not(:placeholder-shown):invalid~label {
+    top: -0.2vw;
+}
+
+.input-box input {
+    width: 87.5%;
+    height: 3.52vw;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.27vw;
+    padding: 0 3.91vw 0 0.25vw;
+    color: white;
+}
+
+.input-box ion-icon {
+    position: absolute;
+    right: 0.39vw;
+    color: white;
+    font-size: 1.27vw;
+    font-weight: bold;
+    top: 1.17vw;
+}
+
+.bi {
+    position: absolute;
+    right: 0.39vw;
+    color: white;
+    font-size: 1.27vw;
+    top: 0.98vw;
+}
+
+.tnc input[type="checkbox"] {
+    margin-right: 0.59vw;
+    accent-color: green;
+    width: 1.17vw;
+    height: 1.17vw;
+}
+
+.tnc {
+    margin: -0.20vw 0 2.56vw 0;
+    font-size: 1.16vw;
+    color: white;
+}
+
+.tnc label a {
+    color: lightblue;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.tnc label a:hover {
+    text-decoration: underline;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 2.93vw;
+    background: white;
+    border-radius: 1.95vw;
+    border: none;
+    outline: none;
+    font-size: 1.37vw;
+    font-weight: 600;
+}
+
+.register {
+    font-size: 1.17vw;
+    color: white;
+    text-align: center;
+    margin: 2.54vw 0 0.78vw;
+}
+
+.register label a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register label a:hover {
+    text-decoration: underline;
+}
+
+#preloader {
+    background: black url(images/preloader.gif) no-repeat center;
+    background-size: 17.5%;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+}
+
+.lab1 {
+    margin-right: 0.29vw;
+    font-style: italic;
+}
+
+.lab2 {
+    margin-left: 0.29vw;
+}
+
+.fa-brands {
+    font-size: 1.5vw;
+}
+
+.smedia {
+    position: fixed;
+    bottom: 1.5vw;
+    right: 1.5vw;
+}
+
+.a2 {
+    text-decoration: none;
+}
+
+.ul2 .li2 {
+    width: auto;
+    float: left;
+    list-style: none;
+    width: 3.25vw;
+    height: 3.25vw;
+    margin-left: 1vw;
+}
+
+.ul2 .li2 .span2 {
+    border: 0.125vw solid white;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: 0.75s ease-out;
+}
+
+.ul2 .li2:hover .span2 {
+    transition: 0.5s;
+}
+
+.ul2 .li2:nth-child(1):hover .span2 {
+    background: #1DA1F2;
+}
+
+.ul2 .li2:nth-child(2):hover .span2 {
+    background: #4267B2;
+}
+
+.ul2 .li2:nth-child(3):hover .span2 {
+    background: #0077b5;
+}
+
+.ul2 .li2:nth-child(4):hover .span2 {
+    background: #8a3ab9;
+}
+
+.ul2 .li2:nth-child(5):hover .span2 {
+    background: #FF0000;
+}
+
+#preloader {
+    background: black url(/images/preloader.gif) no-repeat center;
+    background-size: 17.5%;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+}

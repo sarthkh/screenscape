@@ -1,0 +1,44 @@
+@font-face {
+    font-family: font;
+    src: url(/public/css/font.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "font";
+    cursor: url(/public/css/cursor.png), auto;
+    user-select: none;
+    color: white;
+    text-decoration: none;
+}
+
+body {
+    background: black;
+    overflow: hidden;
+    padding: 25px;
+}
+
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile {
+    width: 150px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    padding: 5px;
+}

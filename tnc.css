@@ -1,0 +1,90 @@
+@font-face {
+    font-family: main;
+    src: url(fonts/main.otf);
+}
+
+* {
+    font-family: "main";
+    background-color: black;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.terms-box {
+    max-width: 350px;
+    background-color: black;
+    color: white;
+    font-family: "Monteserrat";
+    padding: 35px;
+    border: 0.25vw solid white;
+    border-radius: 1vw;
+}
+
+.terms-text {
+    padding: 0 25px;
+    height: 19.53vw;
+    overflow-y: auto;
+    font-size: 1.25vw;
+    font-weight: 500;
+    color: #f1f1f1;
+}
+
+.terms-text::-webkit-scrollbar {
+    width: 2px;
+    background-color: #282828;
+}
+
+.terms-text::-webkit-scrollbar-thumb {
+    background-color: #d13639;
+}
+
+.terms-text h2 {
+    text-transform: uppercase;
+}
+
+.terms-box h4 {
+    font-size: 13px;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.terms-box h4 span {
+    color: #d13639;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    height: 50 px;
+    width: calc(50%-6px);
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 6 px;
+    font-size: 19px;
+    color: white;
+    transition: .3s linear;
+    cursor: pointer;
+    border-radius: 0.5vw;
+}
+
+.red-btn {
+    background-color: #d13639;
+}
+
+.gray-btn {
+    background-color: #282828;
+}
+
+.btn:hover {
+    opacity: .6;
+}

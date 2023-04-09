@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenScape</title>
+    <meta name="title" content="ScreenScape">
+    <meta name="description"
+        content="ScreenScape is a comprehensive online platform offering movie enthusiasts a diverse selection of film reviews, trailers, and information on upcoming releases.">
+    <link rel="icon" href="icons/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/7331d8ff14.js"></script>
+    <script src="js/main.js" type="module"></script>
+    <script src="js/global.js" defer></script>
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <!-- header -->
+    <header class="header">
+        <a href="main.html" class="logo">
+            <img src="icons/icon.png" width="35" height="35" alt="ScreenScape Home">
+        </a>
+        <a href="./profile">
+            <button class="profile-button">
+                <i class="fa-regular fa-user" alt="profile"></i>
+            </button>
+        </a>
+        <div class="search-box" search-box>
+            <div class="search-wrapper" search-wrapper>
+                <input type="text" name="search" aria-label="Search movie" placeholder="Search any movie.."
+                    autocomplete="off" class="search-field" search-field>
+                <img src="icons/search.png" width="22" height="22" alt="search" class="leading-icon">
+            </div>
+            <button class="search-button" search-toggler>
+                <img src="icons/close.png" width="22" height="22" alt="close search box">
+            </button>
+        </div>
+        <button class="search-button" search-toggler menu-close>
+            <img src="icons/search.png" width="22" height="22" alt="open search box">
+        </button>
+        <button class="menu-button" menu-toggler menu-button>
+            <img src="icons/menu.png" width="22" height="22" alt="open menu" class="menu">
+            <img src="icons/menu-close.png" width="22" height="22" alt="close menu" class="close">
+        </button>
+    </header>
+
+    <main>
+        <!-- sidebar -->
+        <nav class="sidebar" sidebar></nav>
+
+        <div class="overlay" overlay menu-toggler></div>
+
+        <article class="container" page-content>
+
+            <!-- banner -->
+
+            <!-- movielist -->
+
+        </article>
+    </main>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+</body>
+
+</html>

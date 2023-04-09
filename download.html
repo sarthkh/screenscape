@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenScape Download</title>
+    <link rel="icon" href="icons/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="download.css">
+</head>
+
+<body>
+    <div class="blob" id="blob"></div>
+    <nav>
+        <a href="screenscape.html">
+            <img class="icon" src="icons/icon.png">
+        </a>
+        <ul class="ul1">
+            <li class="li1">
+                <a class="a1" href="premium.html">
+                    Premium
+                </a>
+            </li>
+            <li class="li1">
+                <a class="a1" href="download.html">
+                    Download
+                </a>
+            <li class="li1">
+                <a class="a1" href="aboutus.html">
+                    About us
+                </a>
+            </li>
+            <li class="li1">
+                <a class="a1" href="ContactUs.html">
+                    Contact Us
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="main">
+        <h3>Thank you for downloading</h3>
+        <h3>Your file should start downloading in a few seconds.</h3>
+        <br>
+        <h3>If downloading doesn't start automatically</h3>
+        <a id="downloadLink" href="downloads/setup.exe">click here to get your file</a>
+    </div>
+    <script>
+        var downloadTimeout = setTimeout(function () {
+            window.location = document.getElementById("downloadLink").href;
+        }, 1500);
+    </script>
+</body>
+
+</html>

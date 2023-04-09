@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenScape</title>
+    <link rel="icon" href="icons/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="screenscape.css">
+    <script src="https://kit.fontawesome.com/7331d8ff14.js"></script>
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <div class="blob" id="blob"></div>
+    <div class="head">
+        <nav>
+            <a href="screenscape.html">
+                <img class="icon" src="icons/icon.png">
+            </a>
+            <ul class="ul1">
+                <li class="li1">
+                    <a class="a1" href="premium.html">
+                        Premium
+                    </a>
+                </li>
+                <li class="li1">
+                    <a class="a1" href="download.html">
+                        Download
+                    </a>
+                </li>
+                <li class="li1">
+                    <a class="a1" href="aboutus.html">
+                        About us
+                    </a>
+                </li>
+                <li class="li1">
+                    <a class="a1" href="support.html">
+                        Support
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="logsig">
+            <h1 data-value="SCREENSCAPE">SCREENSCAPE</h1>
+            <div class="container">
+                <h3 class="text first">Escape into the world of movies, <span class="auto-type"></span></h3>
+            </div>
+            <button type="submit" onclick="location.href='/login'"><span class="span1">Login</span></button>
+            <button type="submit" onclick="location.href='/register'"><span class="span1">Register</span></button>
+        </div>
+        <div class="smedia">
+            <ul class="ul2">
+                <li class="li2">
+                    <a class="a2" href="https://twitter.com" target="_blank">
+                        <span class="span2">
+                            <i class="fa-brands fa-twitter"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="li2">
+                    <a class="a2" href="https://facebook.com" target="_blank">
+                        <span class="span2">
+                            <i id="smico" class="fa-brands fa-facebook-f"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="li2">
+                    <a class="a2" href="https://linkedin.com" target="_blank">
+                        <span class="span2">
+                            <i id="smico" class="fa-brands fa-linkedin-in"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="li2">
+                    <a class="a2" href="https://instagram.com" target="_blank">
+                        <span class="span2">
+                            <i id="smico" class="fa-brands fa-instagram"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="li2">
+                    <a class="a2" href="https://youtube.com" target="_blank">
+                        <span class="span2">
+                            <i id="smico" class="fa-brands fa-youtube"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+    <script>
+        window.addEventListener("load", () => {
+            let loader = document.getElementById("preloader");
+            loader.style.display = "none";
+        });
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let interval = null;
+        document.querySelector("h1").onmouseover = event => {
+            let iteration = 0;
+            clearInterval(interval);
+            interval = setInterval(() => {
+                event.target.innerText = event.target.innerText
+                    .split("")
+                    .map((letter, index) => {
+                        if (index < iteration) {
+                            return event.target.dataset.value[index];
+                        }
+                        return letters[Math.floor(Math.random() * 26)]
+                    })
+                    .join("");
+                if (iteration >= event.target.dataset.value.length) {
+                    clearInterval(interval);
+                }
+                iteration += 0.25;
+            }, 50);
+        }
+        let blob = document.getElementById("blob");
+        window.onpointermove = event => {
+            const { clientX, clientY } = event;
+            blob.animate({
+                left: `${clientX}px`,
+                top: `${clientY}px`
+            }, { duration: 2500, fill: "forwards" });
+        }
+        let type = new Typed(".auto-type", {
+            strings: ["anytime.", "anywhere."],
+            typeSpeed: 125,
+            backSpeed: 125,
+            loop: true
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScreenScape Premium</title>
+  <link rel="icon" href="icons/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="premium.css">
+</head>
+
+<body>
+  <div class="blob" id="blob" onclick="closeMenu()"></div>
+  <nav>
+    <a href="screenscape.html">
+      <img class="icon" src="icons/icon.png">
+    </a>
+    <ul class="ul1">
+      <li class="li1">
+        <a class="a1" href="premium.html">
+          Premium
+        </a>
+      </li>
+      <li class="li1">
+        <a class="a1" href="download.html">
+          Download
+        </a>
+      <li class="li1">
+        <a class="a1" href="aboutus.html">
+          About us
+        </a>
+      </li>
+      <li class="li1">
+        <a class="a1" href="ContactUs.html">
+          Contact Us
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <section class="main">
+    <p>Upgrade your account to access exclusive features with one of our various subscription plans</p>
+    <div class="grid">
+      <h2>Premium Individual</h2>
+      <ul>
+        <li>Unlimited Downloads</li>
+        <li>Lossless Audio Quality</li>
+        <li>Multiple Device support</li>
+        <li>Price: $10/month</li>
+        <li><a href="subscribe.html">Subscribe now</a></li>
+      </ul>
+    </div>
+    <div class="grid">
+      <h2>Premium Family</h2>
+      <ul>
+        <li>Unlimited Downloads</li>
+        <li>Lossless Audio Quality</li>
+        <li>Multiple Device support</li>
+        <li>Upto 6 Users</li>
+        <li>Price: $30/month</li>
+        <li><a href="subscribe.html">Subscribe now</a></li>
+      </ul>
+    </div>
+    <div class="grid">
+      <h2>Premium Student</h2>
+      <ul>
+        <li>Unlimited Downloads</li>
+        <li>Lossless Audio Quality</li>
+        <li>Multiple Device support</li>
+        <li>Price: $5/month</li>
+        <li><a href="subscribe.html">Subscribe now</a></li>
+      </ul>
+    </div>
+  </section>
+  <script>
+    window.addEventListener("load", () => {
+      let loader = document.getElementById("preloader");
+      setTimeout(function () {
+        loader.style.display = "none";
+      }, 1500);
+    });
+    let blob = document.getElementById("blob");
+    window.onpointermove = event => {
+      const { clientX, clientY } = event;
+      blob.animate({
+        left: `${clientX}px`,
+        top: `${clientY}px`
+      }, { duration: 2500, fill: "forwards" });
+    }
+  </script>
+</body>
+
+</html>

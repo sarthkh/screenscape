@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@font-face {
+    font-family: main;
+    src: url(fonts/main.otf);
+}
+*{
+    font-family: "main";
+    margin:0;
+    padding:0;
+    scroll-behavior:smooth;
+    box-sizing:border-box;
+}
+body{
+    width: 100%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    color:white;
+    background:black;
+}
+.contact-container{
+    max-width: 960px;
+    margin:auto;
+    width:100%;
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1.5rem;
+    background:black;
+    box-shadow:0 0 1rem hsla(0 0 0/ 16%);
+    border-radius:0.5rem;
+    border:0.25vw solid white;
+    overflow:hidden;
+}
+.form-container{
+    padding:20px;
+}
+.form-container h3{
+    font-size:1.2rem;
+    font-weight:600;
+    margin-bottom: 1rem;
+}
+.contact-form{
+    display:grid;
+    row-gap: 1rem;
+}
+.contact-form input,
+.contact-form textarea{
+     width:100%;
+     border:none;
+     outline: none;
+     background:rgb(50, 46, 46);
+     padding: 10px;
+     font-size: 0.9rem;
+     color:white;
+     border-radius:0.4rem;
+}
+.contact-form textarea{
+    resize:none;
+    height:200px;
+}
+.contact-form .send-button{
+    border:none;
+    outline:none;
+    background: white;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor:pointer;
+    color:black;
+}
+.contact-form .send-button:hover{
+    background: hsl(181, 100%, 44%,0.8);
+    transition: 0.3s all linear; 
+}
+.map iframe{
+    width:100%;
+    height:100%;
+}
+@media(max-width:964px){
+    .contact-container{
+        margin:0 auto;
+        width:90%;
+    }
+}
+@media(max-width: 700px){
+    .contact-container{
+        grid-template-columns: 1fr;
+        gap:1 rem;
+        margin-top:20rem !important;
+    }
+    .map iframe{
+        height:400px;
+    }
+}
+nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1.25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .icon {
+    width: 2.75vw;
+    height: 2.75vw;
+  }
+  
+  nav .ul1 .li1 {
+    list-style: none;
+    display: inline-block;
+    margin-left: 2.5vw;
+    margin-right: 0.75vw;
+  }
+  
+  .a1 {
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 0.75vw;
+    transition: 0.25s;
+    color: white;
+  }
+  
+  .a1::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.25vw;
+    border-radius: 1vw;
+    background-image: radial-gradient(circle farthest-corner at 92.3% 71.5%, rgba(83, 138, 214, 1) 0%, rgba(134, 231, 214, 1) 90%);
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    background-size: 200%;
+    animation: flow 2.5s ease-in-out infinite;
+    transition: transform 0.25s ease-in-out;
+  }
+  
+  .a1:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }

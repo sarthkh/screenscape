@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenScape Login</title>
+    <link rel="icon" href="/public/css/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <script src="https://kit.fontawesome.com/7331d8ff14.js"></script>
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <div class="blob" id="blob" onclick="closeMenu()"></div>
+    <section>
+        <div class="select-menu">
+            <div class="select-button" id="select-button">
+                <span id="text">Login</span>
+                <ion-icon name="chevron-down-outline" class="icon-arrow"></ion-icon>
+            </div>
+            <ul class="list">
+                <a href="screenscape.html" class="a1">
+                    <li class="option hover-up" style="--i:4;">
+                        <ion-icon name="home-outline" class="icon"></ion-icon>
+                        <span class="option-text">Home</span>
+                    </li>
+                </a>
+                <a href="/register" class="a1">
+                    <li class="option" style="--i:3;">
+                        <ion-icon name="person-add-outline" class="icon"></ion-icon>
+                        <span class="option-text">Register</span>
+                    </li>
+                </a>
+                <a href="download.html" class="a1">
+                    <li class="option" style="--i:2;">
+                        <ion-icon name="cloud-download-outline" class="icon"></ion-icon>
+                        <span class="option-text">Download</span>
+                    </li>
+                </a>
+                <a href="aboutus.html" class="a1">
+                    <li class="option hover-down" style="--i:1;">
+                        <ion-icon name="information-circle-outline" class="icon"></ion-icon>
+                        <span class="option-text">About</span>
+                    </li>
+                </a>
+            </ul>
+        </div>
+        {{#if msg}}
+        <p class="{{msg_type}}">{{msg}}</p>
+        {{/if}}
+        <div class="form-box" onclick="closeMenu()">
+            <form action="/auth/login" method="post">
+                <div class="input-box" id="input-box-1">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input id="email" name="email" type="email" onkeyup="check1()" placeholder=" " required>
+                    <label for="">Email</label>
+                </div>
+                <div class="input-box" id="input-box-2">
+                    <i class="bi bi-eye-slash" id="togglePassword"></i>
+                    <input id="password" name="password" type="password" onkeyup="check2()" placeholder=" " required>
+                    <label for="">Password</label>
+                </div>
+                <div class="forgot">
+                    <label for="cbox" class="lab1"><input id="cbox" type="checkbox">Remember me</label>
+                    <label for="" class="lab2"><a href="#">Forgot password</a></label>
+                </div>
+                <button>Log in</button>
+                <div class="register">
+                    <label for="" class="lab3">Don't have an account?</label>
+                    <label for="" class="lab4"><a href="/register">Sign up</a></label>
+                </div>
+            </form>
+        </div>
+        <div class="smedia">
+            <ul class="ul2">
+                <li class="li2">
+                    <a class="a2" href="https://twitter.com" target="_blank">
+                        <span class="span2">
+                            <i class="fa-brands fa-twitter"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="li2">
+                    <a class="a2" href="https://facebook.com" target="_blank">
+                        <span class="span2">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="li2">
+                    <a class="a2" href="https://linkedin.com" target="_blank">
+                        <span class="span2">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="li2">
+                    <a class="a2" href="https://instagram.com" target="_blank">
+                        <span class="span2">
+                            <i class="fa-brands fa-instagram"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="li2">
+                    <a class="a2" href="https://youtube.com" target="_blank">
+                        <span class="span2">
+                            <i class="fa-brands fa-youtube"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <script>
+        let emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+        let passwordPattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{5,20}$/;
+        function check1() {
+            let inputBox = document.getElementById("input-box-1");
+            let input = document.getElementById("email");
+            if (!input.value.match(emailPattern) && input.value != "") {
+                inputBox.style.borderBottom = "1.75px solid red";
+            }
+            else if (input.value.match(emailPattern)) {
+                inputBox.style.borderBottom = "1.75px solid green";
+            }
+            else {
+                inputBox.style.borderBottom = "1.75px solid white";
+            }
+        }
+        function check2() {
+            let inputBox = document.getElementById("input-box-2");
+            let input = document.getElementById("password");
+            if (!input.value.match(passwordPattern) && input.value != "") {
+                inputBox.style.borderBottom = "1.75px solid red";
+            }
+            else if (input.value.match(passwordPattern)) {
+                inputBox.style.borderBottom = "1.75px solid green";
+            }
+            else {
+                inputBox.style.borderBottom = "1.75px solid white";
+            }
+        }
+        window.addEventListener("load", () => {
+            let loader = document.getElementById("preloader");
+            loader.style.display = "none";
+        });
+        let togglePassword = document.querySelector("#togglePassword");
+        let password = document.querySelector("#password");
+        togglePassword.addEventListener("click", function (e) {
+            const type = password.getAttribute('type') === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            this.classList.toggle("bi-eye");
+        });
+        let blob = document.getElementById("blob");
+        window.onpointermove = event => {
+            const { clientX, clientY } = event;
+            blob.animate({
+                left: `${clientX}px`,
+                top: `${clientY}px`
+            }, { duration: 2500, fill: "forwards" });
+        }
+        let selectButton = document.getElementById("select-button");
+        let text = document.getElementById("text");
+        let option = document.getElementsByClassName("option");
+        selectButton.addEventListener("click", function () {
+            selectButton.classList.toggle("active");
+        });
+        function closeMenu() {
+            selectButton.classList.remove("active");
+        }
+        for (options of option) {
+            options.onclick = function () {
+                text.innerHTML = this.textContent;
+            }
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
